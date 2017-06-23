@@ -7,7 +7,7 @@ Another option is to use a library like LoopBack that is purpose built by Strong
 LoopBack allows you to define models with its handy CLI and generates the API endpoints to perform typical CRUD operations on your data. Validation, authorization, and model relationships are all baked into LoopBack, and you also have plenty of hooks to wire up custom code when you need to.
 
 ## Quick Start
-[Build a Node.js REST API with LoopBack](https://egghead.io/courses/build-a-node-js-rest-api-with-loopback) [`By egghead.io`](egghead.io)
+[Build a Node.js REST API with LoopBack](https://egghead.io/courses/build-a-node-js-rest-api-with-loopback) [`egghead.io`](egghead.io)
 
 ## Basics
 
