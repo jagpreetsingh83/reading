@@ -1,3 +1,14 @@
+# Loopback 3.x
+
+## Introduction
+There are definitely days when you might wake up and say to yourself, "Self, let's build a REST API from the ground up today!"
+While you're certainly capable of accomplishing this daunting task, the sheer volume of concerns that need to be addressed when constructing a robust, secure, usable REST API is daunting, at best. Months of your life could be spent constructing the required modules before a user even sees the benefit.
+Another option is to use a library like LoopBack that is purpose built by StrongLoop (IBM) to provide a solid, well-designed, standards based RESTful API for your applications.
+LoopBack allows you to define models with its handy CLI and generates the API endpoints to perform typical CRUD operations on your data. Validation, authorization, and model relationships are all baked into LoopBack, and you also have plenty of hooks to wire up custom code when you need to.
+
+## Quick Start
+[Build a Node.js REST API with LoopBack](https://egghead.io/courses/build-a-node-js-rest-api-with-loopback) [`By egghead.io`](egghead.io)
+
 ## Basics
 
 *   A key powerful feature of LoopBack is that when you define a model it automatically comes with a predefined REST API with a full set of create, read, update, and delete operations.
@@ -5,10 +16,11 @@
 *   Base Models > Connected Models > Built-in models
 *   To specify a project-relative path (for example, to a directory containing static assets), start the string with the prefix $!
 *   You can create loopback models directly from the relational database using the Model discovery.
-*   Application logic..
+*   Application logic
     1.  Remote Methods (Custom REST endpoints), Remote Hooks (triggered by remote methods) and Operation Hooks (triggered by create, read, update, delete etc.)
     2.  Boot scripts that runs when the application starts
     3.  Custom middleware
+*   `/explorer` has the API and `/explorer/swagger.json` has swagger JSON.
 
 ## Components
 
@@ -56,4 +68,6 @@
     }
     ```
 >   For routes serving JSON, best practice is to create a new model and implement the routes as remote methods. For routes serving non-JSON responses, best practice is to define them the standard “Express way” in server.js or a boot script.
+
+Next: http://loopback.io/doc/en/lb3/LoopBack-FAQ.html
 
