@@ -72,5 +72,6 @@ LoopBack allows you to define models with its handy CLI and generates the API en
     ```
 >   For routes serving JSON, best practice is to create a new model and implement the routes as remote methods. For routes serving non-JSON responses, best practice is to define them the standard “Express way” in server.js or a boot script.
 
-Next: http://loopback.io/doc/en/lb3/LoopBack-FAQ.html
+Next:
+https://loopback.io/doc/en/lb3/Connect-your-API-to-a-data-source.html
 
