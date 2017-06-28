@@ -1,19 +1,22 @@
 # Loopback 3.x
 
 ## Introduction
+
 There are definitely days when you might wake up and say to yourself, "Self, let's build a REST API from the ground up today!"
 While you're certainly capable of accomplishing this daunting task, the sheer volume of concerns that need to be addressed when constructing a robust, secure, usable REST API is daunting, at best. Months of your life could be spent constructing the required modules before a user even sees the benefit.
 Another option is to use a library like LoopBack that is purpose built by StrongLoop (IBM) to provide a solid, well-designed, standards based RESTful API for your applications.
 LoopBack allows you to define models with its handy CLI and generates the API endpoints to perform typical CRUD operations on your data. Validation, authorization, and model relationships are all baked into LoopBack, and you also have plenty of hooks to wire up custom code when you need to.
 
 ## Quick Start
+
 [Build a Node.js REST API with LoopBack](https://egghead.io/courses/build-a-node-js-rest-api-with-loopback) [`egghead.io`](egghead.io)
 
 ## Basics
 
 *   A key powerful feature of LoopBack is that when you define a model it automatically comes with a predefined REST API with a full set of create, read, update, and delete operations.
 *   The Model definition JSON file includes an idInjection property that indicates whether LoopBack automatically adds a unique id property to a model. For a model connected to a database, the id property corresponds to the primary key.
-*   Base Models > Connected Models > Built-in models
+*   Model Hierarchy  
+    ![alt text](images/model-hierarchy.png "Model <-- Connected Model <-- Built-in Model")
 *   To specify a project-relative path (for example, to a directory containing static assets), start the string with the prefix $!
 *   You can create loopback models directly from the relational database using the Model discovery.
 *   Application logic
