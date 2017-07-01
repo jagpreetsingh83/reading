@@ -24,6 +24,7 @@ LoopBack allows you to define models with its handy CLI and generates the API en
     2.  Boot scripts that runs when the application starts
     3.  Custom middleware
 *   `/explorer` has the API and `/explorer/swagger.json` has swagger JSON.
+>   Create the models in /common even when you are building only the server side.
 
 ## Components
 
@@ -70,8 +71,73 @@ LoopBack allows you to define models with its handy CLI and generates the API en
         }
     }
     ```
+*   Loopback middleware chain
+```javascript
+    1.  initial:before
+    2.  initial
+    3.  initial:after
+    4.  session:before
+    5.  session
+    6.  session:after
+    7.  auth:before
+    8.  auth
+    9.  auth:after
+    10. parse:before
+    11. parse
+    12. parse:after
+    13. routes:before
+    14. `Express middleware`
+    15. `Components`
+    16. `Boot scripts`
+    17. routes
+    18. routes:after
+    19. files:before
+    20. files
+    21. files:after
+    22. final:before
+    23. final
+    24. final:after
+```
 >   For routes serving JSON, best practice is to create a new model and implement the routes as remote methods. For routes serving non-JSON responses, best practice is to define them the standard “Express way” in server.js or a boot script.
 
+## Boot Scripts
+
+```javascript
+    13. routes:before
+    14. `Express middleware`
+    15. `Components`
+    16. `Boot scripts`
+    17. routes
+```
+>   By default loopBack loads boot scripts in alphabetical order.
+
+## Database
+
+We can have boot scripts to load any meta-data at the load of the application.
+
+```javascript
+// server/boot/create-sample-models.js
+
+module.exports = function(app) {
+  app.dataSources.mysqlDs.automigrate('CoffeeShop', function(err) {
+    if (err) throw err;
+    app.models.CoffeeShop.create([{
+      name: 'Bel Cafe',
+      city: 'Vancouver'
+    } {
+      name: 'Caffe Artigiano',
+      city: 'Vancouver'
+    } ], function(err, coffeeShops) {
+      if (err) throw err;
+      console.log('Models created: \n', coffeeShops);
+    });
+  });
+};
+```
+
+`Auto-migrate`: Automatically create or re-create the table schemas based on the model definitions.   
+`Auto-update`: Automatically alter the table schemas based on the model definitions.
+
 Next:
-https://loopback.io/doc/en/lb3/Connect-your-API-to-a-data-source.html
+http://loopback.io/doc/en/lb3/Extend-your-API.html
 
