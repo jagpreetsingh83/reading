@@ -18,13 +18,21 @@ LoopBack allows you to define models with its handy CLI and generates the API en
 *   Model Hierarchy  
     ![alt text](images/model-hierarchy.png "Model <-- Connected Model <-- Built-in Model")
 *   To specify a project-relative path (for example, to a directory containing static assets), start the string with the prefix $!
-*   You can create loopback models directly from the relational database using the Model discovery.
+*   You can create loopback models directly from the relational database using the [Model discovery](http://loopback.io/doc/en/lb3/Discovering-models-from-relational-databases.html#additional-discovery-functions).
 *   Application logic
     1.  Remote Methods (Custom REST endpoints), Remote Hooks (triggered by remote methods) and Operation Hooks (triggered by create, read, update, delete etc.)
     2.  Boot scripts that runs when the application starts
     3.  Custom middleware
 *   `/explorer` has the API and `/explorer/swagger.json` has swagger JSON.
+
 >   Create the models in /common even when you are building only the server side.
+
+>   Using *.js files to configure a LoopBack application will only work when the original .json files are kept in place. Rather than replacing .json files with .js files, you should be overriding values from .json files in .js files. That said, by leaving the default .json files empty, all configuration can be done in .js files.
+
+*   This syntax can be used to access config/environment variables in the files even JSON.
+    ```
+    ${MONGO_USER}
+    ```
 
 ## Components
 
@@ -139,5 +147,5 @@ module.exports = function(app) {
 `Auto-update`: Automatically alter the table schemas based on the model definitions.
 
 Next:
-http://loopback.io/doc/en/lb3/Extend-your-API.html
+http://loopback.io/doc/en/lb3/Managing-users.html
 
