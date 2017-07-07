@@ -1,5 +1,3 @@
-# Goal Based Investing
-
 ### Learning
 
 ### Improvements
