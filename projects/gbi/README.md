@@ -1,5 +1,3 @@
-# Goal Based Investing
-
 ### Learning
 
 *   Used `loopback-component-jsonapi` to standardize the API response structure.
