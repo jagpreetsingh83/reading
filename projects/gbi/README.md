@@ -2,6 +2,8 @@
 
 ### Learning
 
+*   Used `loopback-component-jsonapi` to standardize the API response structure.
+
 ### Improvements
 
 *   config.json file can be read using `app.get('setting-name')`

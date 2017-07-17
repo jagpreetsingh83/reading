@@ -33,6 +33,17 @@ LoopBack allows you to define models with its handy CLI and generates the API en
     ```
     ${MONGO_USER}
     ```
+*   `res.locals` An object that contains response local variables scoped to the request, and therefore available only to the view(s) rendered during that request / response cycle (if any). Otherwise, this property is identical to app.locals  
+This property is useful for exposing request-level information such as the request path name, authenticated user, user settings, and so on.
+    ```javascript
+    app.use(function(req, res, next){
+        res.locals.user = req.user;
+        res.locals.authenticated = ! req.user.anonymous;
+        next();
+    });
+    ```
+*   A promise represents the result of an asynchronous operation.
+*   `error.code` should be used for error translation.
 
 ## Components
 
@@ -117,7 +128,18 @@ LoopBack allows you to define models with its handy CLI and generates the API en
     16. `Boot scripts`
     17. routes
 ```
->   By default loopBack loads boot scripts in alphabetical order.
+>   By default loopBack loads boot scripts in alphabetical order.  
+    `01-your-first-script.js`  
+    `02-your-second-script.js`
+
+Explicit Ordering
+```javascript
+bootOptions = { 
+    "appRootDir": __dirname, 
+    "bootScripts" : [ "/full/path/to/boot/script/first.js", "//full/path/to/boot/script/second.js", ... ]
+};
+boot(app, bootOptions);
+```
 
 ## Database
 
@@ -146,6 +168,22 @@ module.exports = function(app) {
 `Auto-migrate`: Automatically create or re-create the table schemas based on the model definitions.   
 `Auto-update`: Automatically alter the table schemas based on the model definitions.
 
+## Generating Loopback application from swagger.json
+
+We can generate the loopback server with four simple steps, if we have the swagger specification (contract) ready.
+
+Here are the commands for your reference.
+
+1.  Install the strongloop globally
+    npm install -g strongloop
+2.  Create a dummy loopback project with default options
+    slc loopback
+3.  Generate the models out of the swagger specification file ( This can also be local yaml/json file). I just used some sample for reference.
+    slc loopback:swagger http://petstore.swagger.io/v2/swagger.json
+4.  Start the server and validate the project
+    node .
+
+
 Next:
-http://loopback.io/doc/en/lb3/Managing-users.html
+http://loopback.io/doc/en/lb3/LoopBack-components.html
 
