@@ -187,7 +187,7 @@ ng g c MyComp -is -it --spec false
 
 ### Observable
 
-![Observable](./images/observable.png 'Creating an observable from scratch')
+![Observable](./images/Observable.png 'Creating an observable from scratch')
 
 > A `Subject` is an Observable and an Observer at the same time.
 
