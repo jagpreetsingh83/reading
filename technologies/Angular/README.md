@@ -4,34 +4,35 @@
 
 ## Basics
 
->   __`Why do we need Node?`__: Angular Cli internally uses Node and also to manage dependencies along with running a web server.
+> **`Why do we need Node?`**: Angular Cli internally uses Node and also to manage dependencies along with running a web server.
 
->   __`Why do we need a Web Server?`__   
+> **`Why do we need a Web Server?`**
 
-*   __Absolute links relative to a domain name__  
-I mean if you try to reference a resource with an absolute path from the root path of your domain. This won't probably work with the file protocol since its root path is the root folder of your file system 
+* **Absolute links relative to a domain name**  
+  I mean if you try to reference a resource with an absolute path from the root path of your domain. This won't probably work with the file protocol since its root path is the root folder of your file system
 
-*   __JavaScript and AJAX__  
-JavaScript doesn't work well with the file:// protocol and you can some security restrictions according to browsers. 
+* **JavaScript and AJAX**  
+  JavaScript doesn't work well with the file:// protocol and you can some security restrictions according to browsers.
 
->   __JWT Token?__ `header.payload.signature`
+> **JWT Token?** `header.payload.signature`
 
->   `main` file contains the application code and `vendor` file contains the angular
+> `main` file contains the application code and `vendor` file contains the angular
 
->   A component must have a template.
+> A component must have a template.
 
->   View Encapsulation
-*   ViewEncapsulation._Emulated_
-*   ViewEncapsulation._Native_
-*   ViewEncapsulation._None_
+> View Encapsulation
 
->   Selector by ID and Psuedo selectors are not supported by Angular. `[attribute]` and `.class` works fine!
+* ViewEncapsulation._Emulated_
+* ViewEncapsulation._Native_
+* ViewEncapsulation._None_
 
->   `$event` in the template represents the data emitted by the event.
+> Selector by ID and Psuedo selectors are not supported by Angular. `[attribute]` and `.class` works fine!
 
->   `Components` are `Directives` with templates.
+> `$event` in the template represents the data emitted by the event.
 
->   `*ngIf else`
+> `Components` are `Directives` with templates.
+
+> `*ngIf else`
 
 ```html
 <div *ngIf="isValid;else other_content">
@@ -40,48 +41,50 @@ JavaScript doesn't work well with the file:// protocol and you can some security
 <ng-template #other_content>other content here...</ng-template>
 ```
 
->   If you add `accessors` to the constructor arguments you don't have to declare the properties in the class - __TypeScript Feature__
+> If you add `accessors` to the constructor arguments you don't have to declare the properties in the class - **TypeScript Feature**
 
->   In `angular-cli.json` file, the paths are relative to `index.html`
+> In `angular-cli.json` file, the paths are relative to `index.html`
 
->   Debugging https://augury.angular.io/
+> Debugging https://augury.angular.io/
 
-![SourceMap](/images/sourcemap.png "Debugging .ts files in chrome debugger")
+![SourceMap](./images/sourcemap.png 'Debugging .ts files in chrome debugger')
 
->   Always configure your server to return `index.html` instead of `404` and then display an error page if you want. (This is the default behavior of the server spun up by `angular-cli`)
+> Always configure your server to return `index.html` instead of `404` and then display an error page if you want. (This is the default behavior of the server spun up by `angular-cli`)
 
->   There is a `<base href="/">` setting in index.html which can be configured.
+> There is a `<base href="/">` setting in index.html which can be configured.
 
->   `@Injectable` decorator declares that we can now inject stuff!
+> `@Injectable` decorator declares that we can now inject stuff!
 
->   Instead of using type `any` prefer inline type definition e.g. 
+> Instead of using type `any` prefer inline type definition e.g.
+
 ```javscript
 serverData : { name: string, content: string}
 ```
 
->   Anything between the opening and closing tag of your own tag is simply ignored/removed by Angular.
+> Anything between the opening and closing tag of your own tag is simply ignored/removed by Angular.
 
->   Custom events don't propagate up.
+> Custom events don't propagate up.
 
->   backgroundColor is a DOM property and DOM properties do not have `-` dashes.
+> backgroundColor is a DOM property and DOM properties do not have `-` dashes.
 
 ## Directive
 
->   `Directives` are instructions in the DOM.
+> `Directives` are instructions in the DOM.
 
->   `*ngIf` * respresents this directive as a structural directive.
+> `*ngIf` \* respresents this directive as a structural directive.
 
->   We can't have more than one structural directive on one element.
+> We can't have more than one structural directive on one element.
 
->   Use renderer approach for DOM manipulation since its platform agnostic (Isomorphic rendering)
+> Use renderer approach for DOM manipulation since its platform agnostic (Isomorphic rendering)
 
->   Following are identical
+> Following are identical
 
 ```
 <div *ngIf="something">
     Hello
 </div>
 ```
+
 ```
 <ng-template [ngIf]="something">
     <div>
@@ -94,14 +97,14 @@ serverData : { name: string, content: string}
 
 ```
 <input [value]="currentHero.name"
-       (input)="currentHero.name=$event.target.value" > 
+       (input)="currentHero.name=$event.target.value" >
 ```
 
 ```
 <input [(ngModel)]="currentHero.name">
 ```
 
->   Directives are very powerful e.g. the following custom directive performs count based ng repeat
+> Directives are very powerful e.g. the following custom directive performs count based ng repeat
 
 ```
 import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
@@ -126,33 +129,33 @@ export class CountRepeatDirective {
 
 ## Modules
 
->   You must not declare the same `Component, Directive or a Pipe` in more than one module. However, import is OK! If this is absolutely necessary e.g. you have Directive that is needed in two places AppModule and a FeatureModule OR a Feature Module 1 and a Feature Module 2 then you should create a new module to contain this shared Directive. It is a nice trick to have your `CommonModule` imported in this shared module.
+> You must not declare the same `Component, Directive or a Pipe` in more than one module. However, import is OK! If this is absolutely necessary e.g. you have Directive that is needed in two places AppModule and a FeatureModule OR a Feature Module 1 and a Feature Module 2 then you should create a new module to contain this shared Directive. It is a nice trick to have your `CommonModule` imported in this shared module.
 
->   `.forRoot()` is only called in AppModule while `.forChild()` is called in feature module e.g. for the `Router definition`.
+> `.forRoot()` is only called in AppModule while `.forChild()` is called in feature module e.g. for the `Router definition`.
 
->   `Service provider` should should ideally be with `AppModule` since you would generally want the services to be available as singleton and across the app. However, it won't harm if they are provided at both `AppModule` and `FeatureModule`. The root injector will still be same and you will only have a singleton. However, if the Feature module is loded in the `Lazy` manner it will instantiate its own copy.
+> `Service provider` should should ideally be with `AppModule` since you would generally want the services to be available as singleton and across the app. However, it won't harm if they are provided at both `AppModule` and `FeatureModule`. The root injector will still be same and you will only have a singleton. However, if the Feature module is loded in the `Lazy` manner it will instantiate its own copy.
 
 ## Lazy Loading
 
->   `Lazy Loading` is configured at the router.
+> `Lazy Loading` is configured at the router.
 
->   You can add canActivate to the lazy loaded routes but that of course means, that you might load code which in the end can't get accessed anyways. It would be better to check that BEFORE loading the code. You can enforce this behavior by adding the `canLoad` guard to the route which points to the lazily loaded module
+> You can add canActivate to the lazy loaded routes but that of course means, that you might load code which in the end can't get accessed anyways. It would be better to check that BEFORE loading the code. You can enforce this behavior by adding the `canLoad` guard to the route which points to the lazily loaded module
 
 ```javascript
-{ 
+{
     path: 'recipes',
     loadChildren: './recipes/recipes.module#RecipesModule',
     canLoad: [AuthGuard]
 }
 ```
 
-In this example, the AuthGuard  should implement the `CanLoad` interface.
+In this example, the AuthGuard should implement the `CanLoad` interface.
 
 > Don't provide Services in Shared Modules! Especially, when you plan to use them in lazy loaded modules.
 
 ## AOT
 
->   The HTML templates are converted/compiled to JavaScript. This does not mean the templates will now have dynamic data rendered from the API calls but atleast the static part e.g. string interpolation etc. is performed and Agnular is now prepared to consume/process the dynamic data faster!
+> The HTML templates are converted/compiled to JavaScript. This does not mean the templates will now have dynamic data rendered from the API calls but atleast the static part e.g. string interpolation etc. is performed and Agnular is now prepared to consume/process the dynamic data faster!
 
 1.  Just-In-time (Default) - Happens on the Browser i.e. `Runtime`
 2.  Ahead-Of-Time - `Compile Time`
@@ -176,18 +179,16 @@ ng g c MyComp -is -it --spec false
 
 ### NgRX
 
->   State is not persistent. You loose it when you refresh the page. If you want to save it, one can use `Local Storage`.
+> State is not persistent. You loose it when you refresh the page. If you want to save it, one can use `Local Storage`.
 
 ### Services
 
->   Use `EventEmitter` in the service for cross component communication whenever its easier to avoid the chain of event and property bindings.
+> Use `EventEmitter` in the service for cross component communication whenever its easier to avoid the chain of event and property bindings.
 
 ### Observable
 
-![Observable](/images/observable.png "Creating an observable from scratch")
+![Observable](./images/observable.png 'Creating an observable from scratch')
 
->   A `Subject` is an Observable and an Observer at the same time.
+> A `Subject` is an Observable and an Observer at the same time.
 
->   A `Subject` is a better option for EventEmitter.
-
-
+> A `Subject` is a better option for EventEmitter.
