@@ -22,6 +22,10 @@
 
 * You use universal selector `* {...}` if you don't want your styling to be overriden by the broswer defaults since it does not use inheritance instead it applies the style to all the elements.
 
+> Universal specificity has lowest/zero specificity (0,0,0,0)
+
+* Rely more on specificity than order for more maintainable CSS
+
 ```javascript
 Inline elements:
 
@@ -51,11 +55,50 @@ Inline-block elements:
 
 * If you define your fonts in `px` then when you increase/decrease the browser font size you won't see any effect and that's not OK! Also, when you zoom in, the overall layout is at risk. Better use font relative units e.g. root em (rem) and em (the size of widest character M).
 
+  > rem is not supported for < IE 9
+
 ![Units](./images/units.png 'Which unit should I use?')
 
 ![Units Summary](./images/summary.png 'Summary')
 
 * `margin: auto;` works only for block level elements with explicitlt defined width.
+
+* It is a recommended that if you have to apply styles/positioning on inline elements then first put them inside block elements e.g. a div and then add classes.
+
+* text-align works on inline/inline-block elements.
+
+![3 Pillars](./images/pillars.png '3 Pillars of CSS')
+
+* Biggest performance comes out of minimal use of images.
+
+* `CSSOM`: CSS Object Mofel
+
+* Specificity In Action
+  ![specificity](./images/specificity.png 'Specificity')
+
+* Root font size is defined in the html element. It's a good practise to defined it to 10px (i.e. 10/16 = `62.5%`) in html selector (for ease of calculation) and make all values rem.
+
+* `background-image/color` occupies the padding too.
+
+* `z-index` works for both absolute and relative positioning.
+
+* `transition`, `opacity` value different from 1, a `filter` also creates stacking context and not just the z-index.
+
+* BEM Block Element Modifier
+
+  Benefits:
+
+  1.  Results in low specificity classes (better performance, avoid CSS collisions) since classes are not nested.
+
+* The default `display` value for all elements is "`inline`". Most "User Agent stylesheets" (the default styles the browser applies to all sites) reset many elements to "`block`". More: https://css-tricks.com/almanac/properties/d/display/
+
+* Pseudo element is treated as a child element.
+
+* Unlike normal CSS we can mix units in SASS for `calc()`
+
+* When all the elements of the container `float` then the height of the container becomes `0`. To fix this we need `clearfix`
+
+* `inline` elements are treated like text so you can apply css properties such as `text-align: center;`
 
 ## SASS
 
