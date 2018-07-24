@@ -90,6 +90,10 @@ Inline-block elements:
 
   1.  Results in low specificity classes (better performance, avoid CSS collisions) since classes are not nested.
 
+  Great Read:
+
+  https://seesparkbox.com/foundry/bem_by_example
+
 * The default `display` value for all elements is "`inline`". Most "User Agent stylesheets" (the default styles the browser applies to all sites) reset many elements to "`block`". More: https://css-tricks.com/almanac/properties/d/display/
 
 * Pseudo element is treated as a child element.
