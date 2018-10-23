@@ -2,16 +2,20 @@
 
 [Udemy Course - `maximilian schwarzmüller`](https://www.udemy.com/the-complete-guide-to-angular-2/)
 
+## Must Read
+
+> https://blog.angular-university.io/angular-ng-content/ > https://blog.angular-university.io/angular-host-context/
+
 ## Basics
 
 > **`Why do we need Node?`**: Angular Cli internally uses Node and also to manage dependencies along with running a web server.
 
 > **`Why do we need a Web Server?`**
 
-* **Absolute links relative to a domain name**  
+- **Absolute links relative to a domain name**  
   I mean if you try to reference a resource with an absolute path from the root path of your domain. This won't probably work with the file protocol since its root path is the root folder of your file system
 
-* **JavaScript and AJAX**  
+- **JavaScript and AJAX**  
   JavaScript doesn't work well with the file:// protocol and you can some security restrictions according to browsers.
 
 > **JWT Token?** `header.payload.signature`
@@ -22,9 +26,9 @@
 
 > View Encapsulation
 
-* ViewEncapsulation._Emulated_
-* ViewEncapsulation._Native_
-* ViewEncapsulation._None_
+- ViewEncapsulation._Emulated_
+- ViewEncapsulation._Native_
+- ViewEncapsulation._None_
 
 > Selector by ID and Psuedo selectors are not supported by Angular. `[attribute]` and `.class` works fine!
 
@@ -192,3 +196,7 @@ ng g c MyComp -is -it --spec false
 > A `Subject` is an Observable and an Observer at the same time.
 
 > A `Subject` is a better option for EventEmitter.
+
+### Common Errors
+
+> Expression changed after it has been checked error - Basically, the model or data got updated before creating/rendering the view. Thrown by the development mode to prevent the "View Updates Itself" scenario - A UI code which is hard to maintain.
