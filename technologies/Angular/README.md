@@ -4,7 +4,9 @@
 
 ## Must Read
 
-> https://blog.angular-university.io/angular-ng-content/ > https://blog.angular-university.io/angular-host-context/
+- https://blog.angular-university.io/angular-ng-content/
+- https://blog.angular-university.io/angular-host-context/
+- https://medium.com/@tomsu/theming-angular-c869827738c3
 
 ## Basics
 
