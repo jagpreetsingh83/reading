@@ -2,6 +2,8 @@
 
 https://programmingwithmosh.com/react/react-vs-angular/
 
+https://medium.com/javascript-in-plain-english/i-created-the-exact-same-app-in-react-and-vue-here-are-the-differences-e9a1ae8077fd
+
 - React is used far more at Facebook than Angular is at Google
 - Google AdWords, one of the most important projects at Google, uses Angular
 - Angular is considered a framework because it offers strong opinions as to how your application should be structured
