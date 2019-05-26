@@ -23,3 +23,16 @@ const myObject = {
 const { a, ...noA } = myObject;
 console.log(noA); // => { b: 2, c: 3 }
 ```
+
+- Class & Prototypal Inheritance: Class inheritance may or may not use the `class` keyword from ES6. Constructor functions are used, instead. The ES6 `class` keyword desugars to a constructor function:
+
+```javascript
+class Foo {}
+typeof Foo // 'function'
+```
+
+In JavaScript, class inheritance is implemented on top of prototypal inheritance, but that does not mean that it does the same thing.
+
+There is no clear distinction.
+
+
