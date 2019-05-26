@@ -46,5 +46,14 @@ Uncaught TypeError: Class constructor Dog cannot be invoked without 'new'
     at <anonymous>:1:6
 ```
 
+#### Fibonacci number
+
+History - Fibonacci considers the growth of a hypothetical, idealized (biologically unrealistic) rabbit population.
+
+Applications - Has many applications in science and mathematics e.g. determine the greatest common divisor of two integers. 
+
+https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-6.php
+
+
 
 
