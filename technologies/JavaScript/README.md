@@ -35,4 +35,8 @@ In JavaScript, class inheritance is implemented on top of prototypal inheritance
 
 There is no clear distinction. We should actually realy on composition over inheritence since while inheriting we have no control over selective inherit. We get everything. Even the stuff we don't need.
 
+https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b
+
+
+
 
