@@ -33,11 +33,11 @@ typeof Foo // 'function'
 
 In JavaScript, class inheritance is implemented on top of prototypal inheritance, but that does not mean that it does the same thing.
 
-There is no clear distinction. We should actually realy on composition over inheritence since while inheriting we have no control over selective inherit. We get everything. Even the stuff we don't need.
+There is no clear distinction. We should actually rely on composition over inheritence since while inheriting we have no control over selective inherit. We get everything. Even the stuff we don't need.
 
 https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b
 
-JavaScript classes, introduced in ECMAScript 2015, are primarily syntactical sugar over JavaScript’s existing prototype-based inheritance.
+JavaScript classes, introduced in ECMAScript 2015, are primarily syntactical sugar over JavaScript’s existing prototype-based inheritance. The class syntax does not introduce a new object-oriented inheritance model to JavaScript.
 
 
 
