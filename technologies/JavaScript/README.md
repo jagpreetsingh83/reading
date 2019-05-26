@@ -1,0 +1,38 @@
+### Basics
+
+“Perfection is achieved … when there is nothing left to take away.” — Antoine de Saint Exupéry
+
+- Hoisting: Basically, when Javascript compiles all of your code, all variable declarations using var are hoisted/lifted to the top of their functional/local scope (if declared inside a function) or to the top of their global scope (if declared outside of a function) regardless of where the actual declaration has been made. This is what we mean by “hoisting”.
+https://medium.com/javascript-in-plain-english/https-medium-com-javascript-in-plain-english-what-is-hoisting-in-javascript-a63c1b2267a1
+
+- Lexical Scope: Shared/Extended Scope. Lexical Scoping just means that it uses thisfrom the code that contains the Arrow Function.
+https://hackernoon.com/javascript-es6-arrow-functions-and-lexical-this-f2a3e2a5e8c4
+
+- Closure: Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
+
+- Deep Cloning: There is no easy way. You need a solid algorithm to achieve this natively. Easiest is sttringify and parse but it does not work with dates, functions, Infinity etc.
+
+- Using rest operator to omit values:
+
+```javascript
+const myObject = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+const { a, ...noA } = myObject;
+console.log(noA); // => { b: 2, c: 3 }
+```
+
+- Class & Prototypal Inheritance: Class inheritance may or may not use the `class` keyword from ES6. Constructor functions are used, instead. The ES6 `class` keyword desugars to a constructor function:
+
+```javascript
+class Foo {}
+typeof Foo // 'function'
+```
+
+In JavaScript, class inheritance is implemented on top of prototypal inheritance, but that does not mean that it does the same thing.
+
+There is no clear distinction. We should actually realy on composition over inheritence since while inheriting we have no control over selective inherit. We get everything. Even the stuff we don't need.
+
+
