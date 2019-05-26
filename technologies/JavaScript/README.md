@@ -33,6 +33,6 @@ typeof Foo // 'function'
 
 In JavaScript, class inheritance is implemented on top of prototypal inheritance, but that does not mean that it does the same thing.
 
-There is no clear distinction.
+There is no clear distinction. We should actually realy on composition over inheritence since while inheriting we have no control over selective inherit. We get everything. Even the stuff we don't need.
 
 
