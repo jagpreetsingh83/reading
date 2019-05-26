@@ -1,5 +1,7 @@
 ### Basics
 
+“Perfection is achieved … when there is nothing left to take away.” — Antoine de Saint Exupéry
+
 - Hoisting: Basically, when Javascript compiles all of your code, all variable declarations using var are hoisted/lifted to the top of their functional/local scope (if declared inside a function) or to the top of their global scope (if declared outside of a function) regardless of where the actual declaration has been made. This is what we mean by “hoisting”.
 https://medium.com/javascript-in-plain-english/https-medium-com-javascript-in-plain-english-what-is-hoisting-in-javascript-a63c1b2267a1
 
