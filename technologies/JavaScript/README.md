@@ -54,6 +54,43 @@ Applications - Has many applications in science and mathematics e.g. determine t
 
 https://www.w3resource.com/javascript-exercises/javascript-recursion-function-exercise-6.php
 
+```javascript
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, . . .
+fibonacci = (num) => {
+  let a = 1,
+    b = 0,
+    v = [0];
+  for (let i = 1; i <= num; i++) {
+    let c = a + b;
+    v.push(c);
+    a = b;
+    b = c;
+  }
+  return v;
+}
+
+// document.write(fibonacci(8));
+
+fibonacci1 = (num) => {
+  let sol = [1,1];
+  for (let i = 2; i <= num; i++) {
+    sol.push(sol[i-1] + sol[i-2]);
+  }
+  return sol;
+}
+
+// document.write(fibonacci1(8))
+
+fibonacciRec = (n) => {
+	if (n == 0) return [0]
+  if (n == 1) return [0, 1]
+  const arr = fibonacciRec(n - 1);
+  return [...arr, arr[n-1] + arr[n-2]];
+}
+
+document.write(fibonacciRec(8));
+```
+
 
 
 
