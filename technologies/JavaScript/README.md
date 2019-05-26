@@ -37,6 +37,8 @@ There is no clear distinction. We should actually realy on composition over inhe
 
 https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b
 
+JavaScript classes, introduced in ECMAScript 2015, are primarily syntactical sugar over JavaScript’s existing prototype-based inheritance.
+
 
 
 
