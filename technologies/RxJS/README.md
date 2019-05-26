@@ -1,5 +1,9 @@
 # RxJS
 
+## Must Read
+
+- https://angularfirebase.com/lessons/rxjs-quickstart-with-20-examples/
+
 ## Basics
 
 - RxJS is `lodash` for events.
