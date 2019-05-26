@@ -39,6 +39,12 @@ https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b
 
 JavaScript classes, introduced in ECMAScript 2015, are primarily syntactical sugar over JavaScript’s existing prototype-based inheritance. The class syntax does not introduce a new object-oriented inheritance model to JavaScript.
 
+One difference between function and class
+
+```
+Uncaught TypeError: Class constructor Dog cannot be invoked without 'new'
+    at <anonymous>:1:6
+```
 
 
 
