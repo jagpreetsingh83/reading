@@ -10,7 +10,7 @@ https://hackernoon.com/javascript-es6-arrow-functions-and-lexical-this-f2a3e2a5e
 
 - Closure: Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
 
-- Deep Closing: There is no easy way. You need a solid algorithm to achieve this natively. Easiest is sttringify and parse but it does not work with dates, functions, Infinity etc.
+- Deep Cloning: There is no easy way. You need a solid algorithm to achieve this natively. Easiest is sttringify and parse but it does not work with dates, functions, Infinity etc.
 
 - Using rest operator to omit values:
 
