@@ -89,6 +89,18 @@ fibonacciRec = (n) => {
 }
 
 document.write(fibonacciRec(8));
+
+function fibonacciMemo(num, memo) {
+  memo = memo || {};
+
+  if (memo[num]) return memo[num];
+
+  if (num <= 1) return 1;
+
+  return memo[num] = fibonacciMemo(num - 1, memo) + fibonacciMemo(num - 2, memo);
+}
+
+document.write(fibonacciMemo(2));
 ```
 
 
