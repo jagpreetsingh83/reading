@@ -11,5 +11,17 @@
 6. Using chrome profiler to identify memory leaks
 7. Make sure you never have a memory leak using take, takeUntil operators
 8. Use a nice logger
+9. Use GIT Hooks (package.json):
+      ```
+            "hitHooks" : {
+                  "commit-msg" : "commitlint -E GIT_PARAMS", 
+                  "pre-commit" : "pretty-quick -staged"
+            }
+      ```
+   https://github.com/commitizen/cz-cli
+10. Configure terminal https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/
+
+
+   
 
  
