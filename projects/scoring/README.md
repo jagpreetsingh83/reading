@@ -20,9 +20,25 @@
       ```
    https://github.com/commitizen/cz-cli
 10. Configure terminal ITERM2
-      https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/
-      https://github.com/MartinSeeler/iterm2-material-design
-      Meslo MG M for Power (Font)
+      - https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/
+      - https://github.com/MartinSeeler/iterm2-material-design
+      - Meslo MG M for Power (Font)
+      - ZSH_THEME="agnoster"
+      ```
+      plugins=(
+          git
+          docker
+          docker-compose
+          mvn
+          node
+          npm
+          nvm
+          ng
+          zsh-autosuggestions
+          zsh-syntax-highlighting
+      )
+      ```
+
 
 
    
